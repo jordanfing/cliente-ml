@@ -1,0 +1,151 @@
+
+
+.container{
+    padding-left:10rem;
+    padding-right:10rem;
+    
+}
+
+
+/*
+*Navbar
+*/
+
+.navbar{
+
+    width:100%;
+    background: #FFE600;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.box{
+    display:flex;
+    align-items: center;
+    width:100%;
+
+}
+
+.helper{
+    
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    
+}
+
+.helper-img{
+    vertical-align: middle;
+    height:32px;
+}
+
+.nav-search-container{
+    width:100%;
+    margin-left:20px;
+}
+
+.nav-search{
+    display: flex;
+    height:36px;
+    width:100%;    
+}
+
+.nav-search-input {
+    border:none;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    width:inherit;
+    text-indent: 10px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+}
+
+.nav-search-input:focus {
+    outline:0;
+}
+
+.nav-search-button{
+    border:none;
+    outline:0;
+    cursor: pointer;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+    
+    
+}
+
+.nav-search-button img{
+   padding:5px;
+   vertical-align: middle;
+    
+}
+
+
+/*
+*---Navbar
+*/
+
+
+/*
+*Product List
+*style={{marginTop:16+'px', color:'#999999',fontSize:14+'px'}}>Hogar, muebles y cocina</div>
+*/
+
+.card-item{
+    background: #FFF;
+    margin-bottom:1px;
+    border-radius: 2px;
+}
+
+.card-image{
+   
+    width:180px;
+    text-align: center;
+   
+    
+
+}
+
+img{
+    max-width: 100%;
+    
+    
+}
+
+.categories{
+
+    margin-top:16px;
+    color: #999999;
+    font-size:14px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding-top:16px;
+    padding-bottom:16px;
+}
+
+.column-img{
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    flex: content;
+    margin-left:16px;
+    margin-right:16px;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    flex: 1;
+}
+
+
+
