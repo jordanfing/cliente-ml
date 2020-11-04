@@ -1,9 +1,15 @@
+
+/**
+ * Muestra el árbol de categorías de los productos
+ */
+
 import React from 'react';
 import '../css/main.css';
 
 export default class Categories extends React.Component{
     
 
+    //Le damos formato al texto
     mapCategories=(categories)=>{
         
         var myCategories="";
@@ -20,10 +26,8 @@ export default class Categories extends React.Component{
     }
 
     render(){
-        
         return(
             <div className='container'>
-                
                 <div className='categories'>
                 {this.props.categories!=null && this.mapCategories(this.props.categories)}
                 </div>

@@ -1,5 +1,7 @@
 module.exports={
 
+  //Número a precio. 1500.00 --> $1.500
+  //Si toFixed(2)=> 1500.85 --> $1.500,85
     currencyFormatES: function(num) {
         return ('$ '+
           num

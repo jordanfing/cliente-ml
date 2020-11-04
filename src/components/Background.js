@@ -1,3 +1,8 @@
+/**
+ * Renderiza el logo de Mercado Libre en background
+ */
+
+
 import React from 'react';
 import '../css/main.css';
 import Logo_ML_2x from '../resources/Logo_ML@2x.png'

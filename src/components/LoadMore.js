@@ -1,14 +1,10 @@
 
 /**
- * 
- * Componente Navbar
- * contiene el buscador de productos
+ * Botón de "Cargar Más"
  * 
  */
 
-
 import React from 'react'
-import SearchBar from '../components/SearchBar';
 
 export default class LoadMore extends React.Component{
     render(){

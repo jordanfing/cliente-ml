@@ -1,7 +1,9 @@
+/**
+ * Animación de pantalla de carga
+ */
+
 import React from 'react';
 import '../css/main.css';
-
-
 export default function Loader (){
 
         return(

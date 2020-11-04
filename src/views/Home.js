@@ -1,3 +1,10 @@
+/**
+ * Home
+ * Vista principal de la aplicación
+ * 
+ */
+
+
 import React from 'react';
 import axios from 'axios';
 import '../App.scss';
@@ -8,6 +15,7 @@ import ProductDetail from './ProductDetail';
 import Categories from '../components/Categories';
 import Background from '../components/Background';
 import NotFound from '../components/NotFound';
+import { SEARCH_ITEMS } from '../api/endpoints';
 
 export default class Home extends React.Component {
     constructor(props){
@@ -25,15 +33,15 @@ export default class Home extends React.Component {
      */
     updateData=(response)=>{
         
-         if (this.state.data!=null){
+         if (this.state.data!=null){ //si ya tengo productos
+            //Agrego los nuevos productos obtenidos a la lista actual
             var newArray = this.state.data.items.concat(response.data.items);
-            //console.log("NEW ARRAY "+JSON.stringify(newArray));
               this.setState({
                   data:{
                       items:newArray,
                   }
               })
-         }else{
+         }else{ // inicializo los datos
              this.setState({
                  data: response.data
              })
@@ -51,48 +59,50 @@ export default class Home extends React.Component {
         })
     }
 
-    /**
-     * Consulta a la API de items
-     * @param {String} value 
-     */
+   /**
+    * Consulta a la API de items. Utiliza paginado
+    * 
+    * @param {String} value 
+    * @param {Number} limit 
+    * @param {Number} offset 
+    */
+
     fetchProducts=(value, limit, offset)=>{
 
-       
         const params={
                 limit:limit,
                 offset:offset,
             }
         
-        axios.get("http://127.0.0.1:5000/api/items?q="+value,{params:params})
+        //endpoint API de items
+        axios.get(SEARCH_ITEMS+value,{params:params})
         .then(response =>{
-            //console.log(JSON.stringify(response));
-            if (response.status===200){
+
+            if (response.status===200){ //responde ok
                 this.updateData(response);
                 
             }
         } )
         .catch(error => {
-            
             this.setState({
-                error:error,
-                
-            })
-          
+                error:error,  
+            })     
         });
      
-    
     }
 
+    /**
+     * Vuelve a pedir datos a la API desde cero.
+     * @param {String} value 
+     * @param {Number} limit 
+     * @param {Number} offset 
+     */
     reloadProducts=(value,limit,offset)=>{
         this.setState({
             data:null
         },()=>
             this.fetchProducts(value,limit,offset))
 
-    }
-
-    componentDidMount(){
-        //console.log(this.props);
     }
 
 
