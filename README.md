@@ -17,7 +17,6 @@
 
 
 ### Set up ###
-*
 * Clonar los repositorios cliente y servidor
 * En ambos repositorios ejecutar npm install y luego npm start
 
